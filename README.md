@@ -78,7 +78,7 @@ Cette commande affiche le contenu du fichier `sources.list` sans les lignes vide
 
 6. compte utilisateurs : cat /etc/passwd | grep -vE ’nologin|sync’
 ```span
-“root@serveur1:~#  cat /etc/passwd | grep -vE 'nologin|sync'
+root@serveur1:~#  cat /etc/passwd | grep -vE 'nologin|sync'
 root:x:0:0:root:/root:/bin/bash”
 ```
 Extrait les comptes utilisateurs du fichier /etc/passwd, en excluant ceux qui sont désactivés ou restreints
