@@ -82,11 +82,14 @@ root@serveur1:~#  cat /etc/passwd | grep -vE 'nologin|sync'
 root:x:0:0:root:/root:/bin/bash”
 ```
 Extrait les comptes utilisateurs du fichier /etc/passwd, en excluant ceux qui sont désactivés ou restreints
+
 7. expliquer le retour des commandes : fdisk -l et fdisk -x
+
 fdisk est un programme piloté par dialogue pour la création et la manipulation de partitions tableaux. Il comprend les tables de partition GPT, MBR, Sun, SGI et BSD. 
 -l, --liste Répertoriez les tables de partition pour les périphériques spécifiés, puis quittez. Si aucun périphérique n'est indiqué, les périphériques mentionnés dans /proc/partitions (si cela le fichier existe) sont utilisés. Les appareils sont toujours répertoriés dans l'ordre dans lequel ils sont spécifiés sur la ligne de commande ou par le noyau répertorié dans /proc/partitions. -x, --list-détails Comme --list, mais fournit plus de détails.
 
 8. excpliquer le retour de la commande : df -h
+
 df - rapporter l'utilisation de l'espace du système de fichiers 
 -h, --lisible par l'homme tailles d'impression en puissances de 1024 (par exemple, 1023M)
 fdisk est un programme piloté par dialogue pour la création et la manipulation de partitions tableaux. Il comprend les tables de partition GPT, MBR, Sun, SGI et BSD. 
