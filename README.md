@@ -125,8 +125,3 @@ Etapes:
 4-Vérifier le résultat avec df -h pour s'assurer du succès.
 
 source: Redimensionner la partition racine à chaud sans la démonter sur debian-facile.org
-
-# Test
-```span
-df -h
-```
