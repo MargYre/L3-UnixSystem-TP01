@@ -38,17 +38,29 @@ J'ai 349 paquets
 La racine / représente moins de 1 Go d’espace utilisé.
 
 ### 2.5 a indiquer dans le rendu et expliquer les commandes et le resultat obtenu
-echo $LANG : en_US.UTF-8
-`root@serveur1:~# hostname
-serveur1`
+1. Langue du système
+- Commande utilisée :
+  ```bash
+  echo $LANG
+  ```
+Résultat : `en_US.UTF-8`
+Cette commande affiche la variable d'environnement `LANG`, qui indique la langue et les paramètres régionaux utilisés par le système.
 
-“NAME
+2. Nom de la machine
+- Commande utilisée :
+  ```bash
+  hostname
+  ```
+Résultat : `serveur1`
+
+3. Nom de domaine
+```bashNAME
        hostname - show or set the system's host name
        domainname - show or set the system's NIS/YP domain name
        ypdomainname - show or set the system's NIS/YP domain name
        nisdomainname - show or set the system's NIS/YP domain name
        dnsdomainname - show the system's DNS domain name
-”
+```
 `root@serveur1:~# domainname -d
 ufr-info-p6.jussieu.fr`
 “root@serveur1:~# cat /etc/apt/sources.list | grep -v -E '^#|^$'
