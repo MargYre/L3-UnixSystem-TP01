@@ -64,6 +64,7 @@ root@serveur1:~# domainname -d
 ufr-info-p6.jussieu.fr`
 ```
 Mon nom de domaine est `ufr-info-p6.jussieu.fr`
+
 4. verification emplacement depots : cat /etc/apt/sources.list | grep -v -E ’^#|^$’
 ```
 deb http://ftp.fr.debian.org/debian/ bookworm main
