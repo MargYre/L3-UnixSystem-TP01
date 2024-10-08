@@ -45,14 +45,12 @@ La racine / représente moins de 1 Go d’espace utilisé.
   ```
 Résultat : `en_US.UTF-8`
 Cette commande affiche la variable d'environnement `LANG`, qui indique la langue et les paramètres régionaux utilisés par le système.
-
 2. Nom de la machine
 - Commande utilisée :
   ```bash
   hostname
   ```
 Résultat : `serveur1`
-
 3. Nom de domaine
 ```bashNAME
        hostname - show or set the system's host name
@@ -61,8 +59,37 @@ Résultat : `serveur1`
        nisdomainname - show or set the system's NIS/YP domain name
        dnsdomainname - show the system's DNS domain name
 ```
-`root@serveur1:~# domainname -d
+```span
+root@serveur1:~# domainname -d
 ufr-info-p6.jussieu.fr`
+```
+Mon nom de domaine est `ufr-info-p6.jussieu.fr`
+4. verification emplacement depots : cat /etc/apt/sources.list | grep -v -E ’^#|^$’
+```
+deb http://ftp.fr.debian.org/debian/ bookworm main
+```
+Cette commande affiche le contenu du fichier `sources.list` sans les lignes vides ou commentées, listant les dépôts APT utilisés par le système.
+
+5. passwd/shadow : cat /etc/shadow | grep -vE ’:\*:|:!\*:’
+ ```
+  root:x:0:0:root:/root:/bin/bash
+  ```
+ Cette commande affiche les utilisateurs enregistrés dans le fichier `/etc/passwd`, en excluant ceux dont la connexion est désactivée (`nologin` et `sync`).
+
+6. compte utilisateurs : cat /etc/passwd | grep -vE ’nologin|sync’
+```span
+“root@serveur1:~#  cat /etc/passwd | grep -vE 'nologin|sync'
+root:x:0:0:root:/root:/bin/bash”
+```
+Extrait les comptes utilisateurs du fichier /etc/passwd, en excluant ceux qui sont désactivés ou restreints
+7. expliquer le retour des commandes : fdisk -l et fdisk -x
+fdisk est un programme piloté par dialogue pour la création et la manipulation de partitions tableaux. Il comprend les tables de partition GPT, MBR, Sun, SGI et BSD. 
+-l, --liste Répertoriez les tables de partition pour les périphériques spécifiés, puis quittez. Si aucun périphérique n'est indiqué, les périphériques mentionnés dans /proc/partitions (si cela le fichier existe) sont utilisés. Les appareils sont toujours répertoriés dans l'ordre dans lequel ils sont spécifiés sur la ligne de commande ou par le noyau répertorié dans /proc/partitions. -x, --list-détails Comme --list, mais fournit plus de détails.
+
+8. excpliquer le retour de la commande : df -h
+df - rapporter l'utilisation de l'espace du système de fichiers 
+-h, --lisible par l'homme tailles d'impression en puissances de 1024 (par exemple, 1023M)
+
 “root@serveur1:~# cat /etc/apt/sources.list | grep -v -E '^#|^$'
 deb http://ftp.fr.debian.org/debian/ bookworm main
 deb http://security.debian.org/debian-security bookworm-security main”
