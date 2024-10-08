@@ -2,9 +2,29 @@
 
 ## 1. Installation de la Machine Virtuelle
 
-### 1.1 Récupération de l'ISO
+note: le reboot se fait après le finish
+/var/log 1G : nom ’les logs’
+ext4, montage /tmp > Ce n'est pas tmp mais /var
 
+## 2 Post-installation
+### 2.1 configuration ssh
+Etapes:
+```span
+apt update
+apt search ssh
+apt install openssh-server
+systemctl status ssh
 
+ref: cloriou.fr-Debian – Autoriser l’accès root via SSH/ serverpilot.io-How to Enable SSH Password Authentication/phoenixnap.com- How to Enable SSH on Debian 12/https://www.linuxtricks.fr-SSH : Installer et configurer un serveur SSH
+
+```
+### 2.2 Connection
+Pour ce faire j'ai changé le port de ma vm
+```span
+ssh sara@192.168.0.31 > ssh root@localhost -p 2222
+```
+
+### 3.3 Nombre de paquets
 
 ## 3 - Aller Plus Loin
 ### 3.1 installation automatique (Preseed)
