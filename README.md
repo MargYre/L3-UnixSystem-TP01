@@ -23,8 +23,52 @@ Pour ce faire j'ai changé le port de ma vm
 ```span
 ssh sara@192.168.0.31 > ssh root@localhost -p 2222
 ```
+ref: conseil du professeur
 
-### 3.3 Nombre de paquets
+### 2.3 Nombre de paquets
+```span
+dpkg -l | wc -l
+```
+J'ai 349 paquets
+
+### 2.4 Space Usage
+```span
+    df -h
+```
+La racine / représente moins de 1 Go d’espace utilisé.
+
+### 2.5 a indiquer dans le rendu et expliquer les commandes et le resultat obtenu
+echo $LANG : en_US.UTF-8
+`root@serveur1:~# hostname
+serveur1`
+
+“NAME
+       hostname - show or set the system's host name
+       domainname - show or set the system's NIS/YP domain name
+       ypdomainname - show or set the system's NIS/YP domain name
+       nisdomainname - show or set the system's NIS/YP domain name
+       dnsdomainname - show the system's DNS domain name
+”
+`root@serveur1:~# domainname -d
+ufr-info-p6.jussieu.fr`
+“root@serveur1:~# cat /etc/apt/sources.list | grep -v -E '^#|^$'
+deb http://ftp.fr.debian.org/debian/ bookworm main
+deb http://security.debian.org/debian-security bookworm-security main”
+
+“root@serveur1:~#  cat /etc/passwd | grep -vE 'nologin|sync'
+root:x:0:0:root:/root:/bin/bash”
+
+
+
+fdisk est un programme piloté par dialogue pour la création et la manipulation de partitions tableaux. Il comprend les tables de partition GPT, MBR, Sun, SGI et BSD. 
+
+-l, --liste Répertoriez les tables de partition pour les périphériques spécifiés, puis quittez. Si aucun périphérique n'est indiqué, les périphériques mentionnés dans /proc/partitions (si cela le fichier existe) sont utilisés. Les appareils sont toujours répertoriés dans l'ordre dans lequel ils sont spécifiés sur la ligne de commande ou par le noyau répertorié dans /proc/partitions. -x, --list-détails Comme --list, mais fournit plus de détails.
+
+
+
+df - rapporter l'utilisation de l'espace du système de fichiers 
+-h, --lisible par l'homme tailles d'impression en puissances de 1024 (par exemple, 1023M)
+
 
 ## 3 - Aller Plus Loin
 ### 3.1 installation automatique (Preseed)
